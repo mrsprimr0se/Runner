@@ -21,12 +21,15 @@ public class CollisionDetect : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obstacle")
         {
-            Debug.Log("Doszlo do kolizji.");
+            Debug.Log("Doszlo do kolizji z przeszkoda.");
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name); // scene manager wczytuje scene ktora aktualnie jest
         }
 
-
+        if (collision.gameObject.tag == "Shield")
+        {
+            Debug.Log("Zebrano tarcze.");
+        }
 
     }
 }
