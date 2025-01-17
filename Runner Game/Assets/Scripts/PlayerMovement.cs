@@ -12,10 +12,21 @@ public class PlayerMovement : MonoBehaviour
 
     public int points = 0;
 
+    public GameObject shieldGameObject;
+
+    public bool playerHasShield = false;
+
+    public AudioClip jumpSound;
+    public AudioSource jumpAudioSource;
+    
+    public AudioSource soundTrackAudioSource;
+    public AudioClip backgroundMusic;
+
 
     void Start()
     {
-        
+        shieldGameObject.SetActive(false);
+        playerHasShield = false;
     }
 
     void Update()
@@ -37,9 +48,21 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.Play("Jump");
+
+            if (jumpAudioSource.isPlaying)
+            {
+
+            }
+
+            else
+            {
+                jumpAudioSource.PlayOneShot(jumpSound);
+            }
+
+            jumpAudioSource.PlayOneShot(jumpSound);
         }
 
     }
