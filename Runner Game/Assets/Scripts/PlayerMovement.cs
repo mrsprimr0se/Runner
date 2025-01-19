@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource soundTrackAudioSource;
     public AudioClip backgroundMusic;
 
+    public int level = 0;
+
 
     void Start()
     {
@@ -31,21 +33,57 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (level == 0)
         {
-            if (transform.position.x > -3f)
+            if (Input.GetKey(KeyCode.A))
             {
-                transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
-            }
-        }
+                if (transform.position.x > -3f)
+                {
+                    transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
+                }
+                else
+                {
 
-        if (Input.GetKey(KeyCode.D))
-        {
+                }
+
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
                 if (transform.position.x < 3f)
                 {
                     transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
                 }
-            
+
+            }
+        }
+
+        if (level == 1)
+        {
+            if (level == 0)
+            {
+                if (Input.GetKey(KeyCode.A))
+                {
+                    if (transform.position.x > -63.9f)
+                    {
+                        transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
+                    }
+                    else
+                    {
+
+                    }
+
+                }
+
+                if (Input.GetKey(KeyCode.D))
+                {
+                    if (transform.position.x < -56f)
+                    {
+                        transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
+                    }
+
+                }
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

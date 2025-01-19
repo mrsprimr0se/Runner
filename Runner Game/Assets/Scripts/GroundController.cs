@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GroundController : MonoBehaviour
 {
+    public bool startMove;
+
     public float moveSpeed;
 
     public float incrementSpeed;
@@ -17,9 +19,12 @@ public class GroundController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveSpeed = moveSpeed + incrementSpeed * Time.deltaTime;
+        if (startMove)
+        {
+            moveSpeed = moveSpeed + incrementSpeed * Time.deltaTime;
 
-        Vector3 moveVector = new Vector3(0, 0, -1);
-        transform.Translate(moveVector * Time.deltaTime * moveSpeed);
+            Vector3 moveVector = new Vector3(0, 0, -1);
+            transform.Translate(moveVector * Time.deltaTime * moveSpeed);
+        }
     }
 }
