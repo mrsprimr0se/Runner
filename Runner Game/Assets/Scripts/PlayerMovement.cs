@@ -59,8 +59,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (level == 1)
-        {
-            if (level == 0)
+        
+         
             {
                 if (Input.GetKey(KeyCode.A))
                 {
@@ -77,14 +77,14 @@ public class PlayerMovement : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.D))
                 {
-                    if (transform.position.x < -56f)
+                    if (transform.position.x < -57.9f)
                     {
                         transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
                     }
 
                 }
             }
-        }
+        
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
